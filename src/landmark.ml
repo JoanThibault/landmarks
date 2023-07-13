@@ -28,7 +28,8 @@ module SparseArray = struct
 
   let reset sparse_array = sparse_array.size <- 0
 
-  let get {keys; data; size} id =
+  let get a id =
+    let {keys; data; size} = a in
     let min = ref 0 in
     let max = ref (size - 1) in
     while !min < !max do
